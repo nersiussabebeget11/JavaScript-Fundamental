@@ -98,6 +98,8 @@ console.log(checkTwo) // False
 // Soal Nomor 4
 // You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2
 // steps. In how many distinct ways can you climb to the top
+
+// *Cara Pertama
 function fib(n) 
 { 
 if (n <= 1) 
@@ -120,6 +122,39 @@ console.log("Number of ways = " + countWays(dataSatu));
 let dataDua = 3;
 console.log("Number of ways = " + countWays(dataDua));
 
+// * Cara Kedua
+function countWays(n) 
+{ 
+    let dp = []; 
+    dp[0] = 1;  
+    dp[1] = 1; 
+    for (let i = 2; i <=n; i++) 
+    { 
+        dp[i]=dp[i-1]+dp[i-2]; 
+    } 
+    return dp[n]; 
+} 
+  
+  
+    // Driver Code 
+    let n=2; 
+    console.log("Number of ways = " + countWays(n));
+
+
+
+function climStar(N) {
+    if (N < 2) {
+        return 1
+        
+    } else {
+        return climStar (N-1) + climStar (N-2)
+        
+    }
+    
+   
+}
+ let result = 4
+    console.log();
   
  
  
